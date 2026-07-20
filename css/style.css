@@ -1,0 +1,572 @@
+:root{
+  --brand:#0C62AB;
+  --white:#ffffff;
+  --muted:#6b7280;
+  --radius:14px;
+  --container-padding:20px;
+  --max-width:1100px;
+  --nav-height:72px;
+}
+*{box-sizing:border-box }
+html{scroll-padding-top: 110px;}
+body{margin:0;font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;color:#0b1220;background:linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);line-height:1.45;}
+a{color:var(--brand); text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding)}
+header{background:var(--white);border-bottom:1px solid #e6eef8;position:sticky;top:0;z-index:40;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding-top: 12px;padding-bottom: 12px;}
+.brand{display:flex;gap:12px;align-items:center}
+.brand a {flex-shrink: 0;}
+.brand img{height:80px; width:auto; background-color: transparent;}
+.logo-desktop { height: 80px; width: auto; } 
+.logo-mobile { display: none; }
+.brand-name{font-size:18px;margin:0;color:var(--brand);letter-spacing:-0.2px}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.btn{background:var(--brand);color:var(--white);padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(12,98,171,0.12);transition: all 0.2s ease-in-out;}
+.btn:hover {transform: translateY(-2px);box-shadow: 0 8px 25px rgba(12,98,171,0.2);}
+.btn-outline {background:transparent;color:var(--brand);padding:8px 12px;border-radius:10px;border:2px solid var(--brand);font-weight:600; transition: all 0.2s ease-in-out;}
+.btn-outline:hover {background: var(--brand);color: var(--white);}
+.hero {position: relative; overflow: hidden; padding: 64px 0;}
+.hero-video-bg {position: absolute;top: 50%;left: 50%;min-width: 100%;min-height: 100%;width: auto;height: auto;object-fit: cover;transform: translate(-50%, -50%);z-index: -2;}
+.hero-overlay {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(11, 18, 32, 0);z-index: -1;}
+.hero-grid{display:grid;gap:24px;align-items:center; position: relative; z-index: 1;}
+.hero-copy {background: var(--white);padding: 24px;border-radius: 12px;box-shadow: 0 10px 25px hsla(0, 0%, 0%, 0.25);}
+.hero-copy h1{font-size:28px;margin:0 0 8px;line-height:1.05; color: var(--brand);}
+.hero-copy h1 .muted { color: var(--muted); }
+.hero-copy p{margin:0 0 16px; color: #0b1220;}
+.hero-copy .small { color: #0b1220; }
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-card{background: var(--brand);padding: 20px;border-radius:12px;display: inline-block; margin-bottom: 8px; box-shadow: 0 10px 25px hsla(0, 0%, 0%, 0.493);padding-bottom: 28px;}
+.hero-card h2, .hero-card div, .hero-card p { color: var(--white); }
+.hero-card .small.muted { color: #d1d5db; }
+.hero-card .btn {background: transparent;border: 2px solid var(--white);color: var(--white);margin-bottom: 20px;}
+.hero-card .btn:hover {background: var(--white);color: var(--brand);}
+.section-spacing {padding-top: 48px;padding-bottom: 48px;}
+.grid-3{display:grid;grid-template-columns:1fr;gap:24px}
+.service{background:var(--white);padding:24px;border-radius:var(--radius);border:1px solid #e6eef8;box-shadow: 0 8px 16px rgba(0,0,0,0.05);transition: transform 0.2s ease, box-shadow 0.2s ease;}
+.service:hover {transform: translateY(-4px);box-shadow: 0 12px 24px rgba(0,0,0,0.08);}
+.service h3{margin:0 0 8px;font-size:18px;color:var(--brand)}
+.service p{margin:0;color:var(--muted);font-size:15px}
+.pricing-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.price-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:24px;border-radius:var(--radius);border:1px solid #e6f0fb;box-shadow: 0 8px 16px rgba(0,0,0,0.05);transition: transform 0.2s ease, box-shadow 0.2s ease;}
+.price-card:hover {transform: translateY(-4px);box-shadow: 0 12px 24px rgba(0,0,0,0.08);}
+.price-card h4{margin:0 0 8px;color:var(--brand)}
+.price {font-size:22px;font-weight:700;margin:6px 0}
+.features-list{margin:12px 0 0;padding:0;list-style:none;color:var(--muted);font-size:14px;display:grid;gap:8px}
+.testimonial-grid {display:grid;gap:24px;}
+.testimonial{background:#ffffff;padding:24px;border-radius:var(--radius);border:1px solid #eef4fb;box-shadow: 0 8px 16px rgba(0,0,0,0.05);transition: transform 0.2s ease, box-shadow 0.2s ease;}
+.testimonial:hover {transform: translateY(-4px);box-shadow: 0 12px 24px rgba(0,0,0,0.08);}
+.testimonial p{margin:0;color:var(--muted)}
+.contact-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:24px;border-radius:var(--radius);border:1px solid #e6f0fb;box-shadow: 0 8px 16px rgba(0,0,0,0.05);}
+input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e2e8f0;margin-top:8px;font-size:14px}
+label{font-weight:600;font-size:13px; margin-top: 12px; display: inline-block;}
+.small{font-size:13px;color:var(--muted)}
+footer{padding:18px 0;color:var(--muted);font-size:14px;border-top:1px solid #f1f6fb;margin-top:24px}
+.muted{color:var(--muted)}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#f2f7fb;color:var(--brand);font-weight:700;font-size:13px}
+.hero-copy .pill { margin-bottom: 12px; }
+.trust-pill{font-size:13px; color:var(--brand); border: 1px solid rgba(12,98,171,0.1); padding: 4px 8px; border-radius: 6px; font-weight: 600;}
+.inline-icon{height:20px;width:20px;vertical-align:middle;margin-right:8px}
+
+/* Stats Bar from Case Study */
+.stats-bar {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 16px; 
+    background: #f2f7fb; 
+    padding: 24px; 
+    border-radius: var(--radius); 
+    margin: 24px 0; 
+    text-align: center;
+}
+.stats-bar > div { border-right: 1px solid #e6eef8; }
+.stats-bar > div:last-child { border-right: 0; }
+.stats-bar .stat-number {
+    font-size: 28px; 
+    font-weight: 800; 
+    color: var(--brand);
+}
+
+@media (max-width: 829px) {.brand .small.muted { display: none; }}
+@media (max-width: 500px) {
+  .nav {flex-direction: column; gap: 16px; padding-top: 16px; padding-bottom: 16px;align-items: center; }
+  .brand { width: 100%;justify-content: center;}
+  .logo-desktop { display: none; }
+  .logo-mobile { display: block; height: 60px; width: auto;}
+  .nav-actions {flex-direction: column; width: 100%;}
+  .nav-actions .btn, .nav-actions .btn-outline {width: 100%; text-align: center;}
+    .pill-bill {
+  width: 300px;
+}
+  .stats-bar { grid-template-columns: 1fr; gap: 20px;}
+  .stats-bar > div { border-right: 0; border-bottom: 1px solid #e6eef8; padding-bottom: 16px;}
+  .stats-bar > div:last-child { border-bottom: 0; padding-bottom: 0;}
+}
+@media(min-width:720px){
+  .hero-grid{grid-template-columns:1fr 420px;align-items:center;gap:28px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonial-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-bar { grid-template-columns: repeat(4, 1fr); }
+}
+@media(min-width:980px){
+  .container{padding:28px}
+  .brand-name{font-size:20px}
+  .hero-copy h1{font-size:36px}
+  .grid-3, .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Specific styles for the 3-card PPA model grid */
+.pricing-grid-ppa {
+  justify-content: center;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 24px;
+}
+
+/* 3 columns on desktop */
+@media(min-width: 980px) {
+  .pricing-grid-ppa {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2 columns on tablet */
+@media(min-width: 720px) and (max-width: 979px) {
+  .pricing-grid-ppa {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 column on mobile */
+@media(max-width: 719px) {
+  .pricing-grid-ppa {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Layout for the diagnostic page */
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+}
+
+/* This makes the grid stack to 1 column on small screens */
+@media (max-width: 730px) {
+  .diagnostic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .container {
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card .btn {
+  margin-top: auto;   /* pushes button to bottom */
+  margin-left: auto;  /* centers horizontally */
+  margin-right: auto; /* centers horizontally */
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Use your existing button styling */
+.dropdown-btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: var(--white);
+  border: 1px solid #e6eef8;
+  border-radius: var(--radius);
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 9999;
+}
+
+/* Links in dropdown */
+.dropdown-menu a {
+
+  
+  padding: 10px 16px;
+  white-space: nowrap;
+  color: #0b1220;
+  font-size: 15px;
+}
+
+.dropdown-menu a:hover {
+  background: #f2f7fb;
+  color: var(--brand);
+}
+
+/* Hover for desktop */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Mobile tap support */
+.dropdown-btn:active + .dropdown-menu,
+.dropdown-btn:focus + .dropdown-menu {
+  display: flex;
+}
+
+/* Fix dropdown button sizing so it matches .btn-outline */
+.dropdown-btn {
+  padding: 8px 12px;        /* same as .btn-outline */
+  border: 2px solid var(--brand);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--brand);
+  font-weight: 600;
+  height: auto;             /* prevents shrinking */
+  line-height: normal;      /* ensures consistent height */
+}
+
+
+/* Make "How We Help" text turn white on hover */
+.dropdown-btn:hover a {
+  color: white !important;
+}
+
+/* Ensure default link color inside the button stays brand color */
+.dropdown-btn a {
+  color: var(--brand);
+  text-decoration: none;
+  display: block;
+}
+
+/* --- FIX HERO GRID ON SMALL SCREENS --- */
+@media (max-width: 500px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .hero-copy {
+    padding: 18px;
+  }
+
+  .hero-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+  }
+}
+
+/* --- PREVENT HORIZONTAL OVERFLOW --- */
+@media (max-width: 500px) {
+  body, html {
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav-actions {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 12px;
+    border-bottom: 1px solid #e6eef8;
+  }
+}
+
+/* --- FIX BUTTON WRAPPING --- */
+@media (max-width: 500px) {
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta .btn,
+  .hero-cta .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* --- FIX PRICE CARDS STACKING --- */
+@media (max-width: 500px) {
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .price-card {
+    width: 100%;
+  }
+}
+
+/* --- FIX TESTIMONIAL GRID --- */
+@media (max-width: 500px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- FIX INDUSTRY PAGE GRIDS ON SMALL SCREENS --- */
+@media (max-width: 500px) {
+
+  /* Hero box */
+  section[style*="padding:60px"] {
+    padding: 32px !important;
+  }
+
+  /* 3-column segmentation grid */
+  section .service + .service + .service,
+  section div[style*="grid-template-columns:repeat(3"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* 4-column membership flow */
+  section div[style*="grid-template-columns:repeat(4"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* PPA fitness pricing cards */
+  .pricing-grid-ppa {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stat bar cleanup */
+  .stats-bar {
+    grid-template-columns: 1fr !important;
+    padding: 20px !important;
+  }
+
+  /* Big service panels shrink padding */
+  .service[style*="padding:42px"],
+  .service[style*="padding:32px"],
+  .service[style*="padding:48px"] {
+    padding: 20px !important;
+  }
+
+}
+
+/* Add space below bottom CTA button */
+.section-spacing .service a.btn {
+  margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 500px) {
+  .section-spacing .service a.btn {
+    margin-bottom: 24px;
+  }
+}
+
+/* Fix the 5 Solar Objections grid on mobile */
+@media (max-width: 500px) {
+  section div[style*="grid-template-columns:repeat(5"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* MOBILE FONT FIX */
+@media (max-width: 550px) {
+  h1, .hero-title, .industry-card h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  .industry-card h2,
+  .industry-card .section-title {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+
+  .industry-card {
+    padding: 24px !important;
+  }
+}
+
+/* FIX Home Services two-column blocks on mobile */
+@media (max-width: 600px) {
+
+  /* Any inline grid with 1fr 1fr becomes stacked */
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Any inline grid with repeat(3…) becomes stacked */
+  div[style*="grid-template-columns:1fr 1fr 1fr"],
+  div[style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Any inline grid with repeat(4…) becomes stacked */
+  div[style*="grid-template-columns:repeat(4"],
+  div[style*="grid-template-columns: 1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Add breathing room under cards when stacked */
+  div[style*="grid-template-columns"] > * {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Painting page hero layout fix */
+  div[style*="grid-template-columns:1.1fr"],
+  div[style*="1.1fr 0.9fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Make the right card full width instead of 80% height */
+  div[style*="grid-template-columns:1.1fr"] > div:nth-child(2) {
+    height: auto !important;
+    margin-top: 20px !important;
+  }
+}
+
+/* TIGHTER CTA CARDS */
+.cta-tight {
+  padding: 28px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12) !important;
+}
+
+.cta-tight h2 {
+  font-size: 24px !important;
+  margin-bottom: 10px !important;
+  line-height: 1.25 !important;
+}
+
+.cta-tight p {
+  font-size: 15px !important;
+  margin-bottom: 16px !important;
+  line-height: 1.4 !important;
+}
+
+.cta-tight .btn {
+  padding: 12px 22px !important;
+  font-size: 15px !important;
+}
+
+/* MOBILE ONLY — add space under CTA buttons */
+@media (max-width: 550px) {
+  #cta-box {
+    padding-bottom: 50px !important; /* 48px original + 40px extra */
+  }
+}
+
+/* MOBILE HEADER HEIGHT FIX */
+@media (max-width: 600px) {
+  .nav {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    gap: 10px !important;
+  }
+}
+/* ============================= */
+/* MOBILE HEADER GAP FIX (FINAL) */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  /* Tighten header vertical space */
+  .nav {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    gap: 10px !important;
+  }
+
+  /* Shrink mobile logo */
+  .logo-mobile {
+    height: 48px !important;
+  }
+
+  /* Hide tagline on mobile */
+  .brand .small.muted {
+    display: none !important;
+  }
+
+  /* Tighten nav buttons */
+  .nav-actions {
+    gap: 8px !important;
+  }
+
+  .nav-actions .btn,
+  .nav-actions .btn-outline,
+  .dropdown-btn {
+    padding: 8px 12px !important;
+  }
+}
+
+/* Prevent phantom spacing between header + hero */
+header + .hero {
+  margin-top: 0 !important;
+}
+
+/* ========================================= */
+/* FIX MOBILE GAP (Updated for Global Header)*/
+/* ========================================= */
+
+@media (max-width: 600px) {
+  /* This targets the wrapper DIV instead of the header tag directly */
+  #global-header + .hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important; /* Removes internal padding if needed */
+  }
+
+  /* Optional: Force the hero video to touch the header bottom */
+  #global-header {
+    margin-bottom: -1px; /* Tucks the seam if there's a pixel bleed */
+  }
+}
