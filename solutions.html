@@ -31,10 +31,49 @@
 
     <style>
         body { font-family: 'Noto Sans', sans-serif; scroll-behavior: smooth; }
-        .bg-rce { background-color: #0c62ab; }
-        .text-rce { color: #0c62ab; }
-        .border-rce { border-color: #0c62ab; }
-        .hover-bg-rce:hover { background-color: #084a85; }
+
+        :root {
+            --rce-blue: #0c62ab;
+            --rce-blue-dark: #084a85;
+            --rce-gold: #d4af37;
+            --rce-gold-soft: #fff9e8;
+        }
+
+        .bg-rce { background-color: var(--rce-blue); }
+        .text-rce { color: var(--rce-blue); }
+        .border-rce { border-color: var(--rce-blue); }
+        .hover-bg-rce:hover { background-color: var(--rce-blue-dark); }
+
+        /* Restrained gold brand accents */
+        .brand-accent-line {
+            width: 3rem;
+            height: 3px;
+            background: var(--rce-gold);
+            border-radius: 999px;
+        }
+
+        .brand-gold-dot {
+            background-color: var(--rce-gold);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.12);
+        }
+
+        .brand-gold-link {
+            color: #e7c75c;
+        }
+
+        .brand-gold-link:hover {
+            color: #f5dc82;
+        }
+
+        .brand-secondary-cta:hover {
+            border-color: rgba(212, 175, 55, 0.75);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.10);
+        }
+
+        .brand-roadmap-badge {
+            background-color: var(--rce-gold);
+            color: #172033;
+        }
         
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -48,6 +87,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm py-3 top-0 left-0 border-b border-gray-100">
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#d4af37]/45 to-transparent pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <a href="index.html" class="flex items-center">
                 <img src="img/logo-main-2026.png" alt="Revenue Capture Experts" class="h-10 w-auto object-contain rounded-md">
@@ -85,8 +125,8 @@
             <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
                 <div class="inline-flex items-center gap-2 bg-white border border-slate-200 text-[#0c62ab] font-bold rounded-full px-3 py-1.5 text-xs mb-6 shadow-sm">
                     <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0c62ab] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#0c62ab]"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4af37] opacity-60"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 brand-gold-dot"></span>
                     </span>
                     The RCE Revenue Architecture
                 </div>
@@ -104,7 +144,7 @@
                     <a href="book-diagnostic.html" class="bg-[#0c62ab] text-white hover:bg-[#094b85] font-bold text-base px-6 py-3 rounded-md shadow-lg hover:-translate-y-1 transition-all duration-300">
                         Get Started
                     </a>
-                    <a href="book-diagnostic.html" class="bg-white text-slate-700 border border-slate-200 hover:border-slate-300 font-bold text-base px-6 py-3 rounded-md shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <a href="book-diagnostic.html" class="brand-secondary-cta bg-white text-slate-700 border border-slate-200 font-bold text-base px-6 py-3 rounded-md shadow-sm hover:-translate-y-1 transition-all duration-300">
                         Book 10-Min Discovery Call
                     </a>
                 </div>
@@ -198,7 +238,7 @@
                     </div>
 
                     <div class="bg-slate-800 border border-slate-700 p-6 md:p-8 rounded-2xl shadow-2xl relative">
-                        <div class="absolute -top-3 -right-3 bg-blue-600 text-white font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider transform rotate-12">The Roadmap</div>
+                        <div class="brand-roadmap-badge absolute -top-3 -right-3 font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider transform rotate-12 shadow-md">The Roadmap</div>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-6 border-b border-slate-700 pb-3 text-center">How We Partner</h3>
                         
                         <div class="space-y-6">
@@ -264,7 +304,7 @@
                 <a href="solutions.html" class="hover:text-white transition-colors">Solutions</a>
                 <a href="why-rce.html" class="hover:text-white transition-colors">Why RCE</a>
                 <a href="results.html" class="hover:text-white transition-colors">Results</a>
-                <a href="book-diagnostic.html" class="text-blue-400 font-semibold hover:text-white transition-colors">Book 10-Min Diagnostic</a>
+                <a href="book-diagnostic.html" class="brand-gold-link font-semibold transition-colors">Book 10-Min Diagnostic</a>
             </div>
 
             <div class="flex gap-6 text-sm font-medium justify-center lg:justify-end lg:w-1/3">
